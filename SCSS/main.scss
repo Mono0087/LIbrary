@@ -1,0 +1,84 @@
+@import "config";
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: $bg-main;
+  font-family: "Roboto", sans-serif;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+p {
+  margin: 0;
+}
+button,
+a {
+  transition: all 0.1s;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// CONTAINER ///////////////////////////////////////
+
+.container {
+  padding: 20px;
+  background-color: $main-theme;
+  max-width: 70vw;
+  margin: 0 auto;
+  position: relative;
+  top: 50px;
+}
+.controls {
+  text-align: right;
+  .add_btn {
+    margin-bottom: 15px;
+    text-align: right;
+  }
+}
+
+.bookcards_container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+.card {
+  background-color: $bg-main;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  .name {
+    margin: 0;
+  }
+  .author {
+  }
+  .pages {
+  }
+  .status {
+    display: flex;
+    gap: 5px;
+  }
+  .remove_btn {
+    align-self: end;
+    position: relative;
+    bottom: -10px;
+    right: -10px;
+  }
+}

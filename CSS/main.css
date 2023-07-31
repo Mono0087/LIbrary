@@ -1,0 +1,93 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: #faebd7;
+  font-family: "Roboto", sans-serif;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+p {
+  margin: 0;
+}
+
+button,
+a {
+  -webkit-transition: all 0.1s;
+  -o-transition: all 0.1s;
+  transition: all 0.1s;
+}
+button:hover,
+a:hover {
+  opacity: 0.8;
+}
+
+.container {
+  padding: 20px;
+  background-color: #b96060;
+  max-width: 70vw;
+  margin: 0 auto;
+  position: relative;
+  top: 50px;
+}
+
+.controls {
+  text-align: right;
+}
+.controls .add_btn {
+  margin-bottom: 15px;
+  text-align: right;
+}
+
+.bookcards_container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background-color: #faebd7;
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px;
+}
+.card .name {
+  margin: 0;
+}
+.card .status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+}
+.card .remove_btn {
+  -ms-flex-item-align: end;
+      align-self: end;
+  position: relative;
+  bottom: -10px;
+  right: -10px;
+}/*# sourceMappingURL=main.css.map */
