@@ -10,6 +10,7 @@ html {
 body {
   background-color: $bg-main;
   font-family: "Roboto", sans-serif;
+  color: #3a3737;
 }
 
 ul,
@@ -34,6 +35,21 @@ a {
   }
 }
 
+.btn {
+  padding: 5px 10px;
+  transition: all 0.1s;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 1px 0px 1px #473232, 0px 1px 1px #473232, 2px 1px 1px #473232,
+    1px 2px 1px #473232, 3px 2px 1px #473232, 2px 3px 1px #473232;
+  &:active {
+    border: none;
+    box-shadow: 1px 0px 1px #473232, 0px 1px 1px #473232, 2px 1px 1px #473232;
+    transform: translate(1px, 1px);
+  }
+}
+
 // CONTAINER ///////////////////////////////////////
 
 .container {
@@ -49,13 +65,14 @@ a {
   .add_btn {
     margin-bottom: 15px;
     text-align: right;
+    background-color: $bg-main;
   }
 }
 
 .bookcards_container {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
 }
 .card {
@@ -64,6 +81,9 @@ a {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  border-radius: 5px;
+  border-bottom: #473232 solid;
+  border-right: #473232 solid;
   .name {
     margin: 0;
   }
@@ -80,5 +100,6 @@ a {
     position: relative;
     bottom: -10px;
     right: -10px;
+    background-color: $main-theme;
   }
 }
