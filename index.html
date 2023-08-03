@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./CSS/normalize.css">
     <link rel="stylesheet" href="./CSS/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="./main.js" defer></script>
     <title>Library</title>
 </head>
 <body>
@@ -18,46 +19,62 @@
                 <div class="card">
                     <h2 class="name">Book Name</h2>
                     <p class="author">Author</p>
-                    <p>pages: <span class="pages">345</span></p>
+                    <p>Pages: <span class="pages">345</span></p>
                     <span class="status">
                         <p>Mark as read:</p>
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" name="" id="" class="status_checkbox">
                     </span><button class="remove_btn btn">Remove</button></div>
                 <div class="card">
                     <h2 class="name">Book Name</h2>
                     <p class="author">Author</p>
-                    <p>pages: <span class="pages">345</span></p>
+                    <p>Pages: <span class="pages">345</span></p>
                     <span class="status">
                         <p>Mark as read:</p>
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" name="" id="" class="status_checkbox">
                     </span><button class="remove_btn btn">Remove</button></div>
                 <div class="card">
                     <h2 class="name">Book Name</h2>
                     <p class="author">Author</p>
-                    <p>pages: <span class="pages">345</span></p>
+                    <p>Pages: <span class="pages">345</span></p>
                     <span class="status">
                         <p>Mark as read:</p>
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" name="" id="" class="status_checkbox">
                     </span><button class="remove_btn btn">Remove</button></div>
                 <div class="card">
                     <h2 class="name">Book Name</h2>
                     <p class="author">Author</p>
-                    <p>pages: <span class="pages">345</span></p>
+                    <p>Pages: <span class="pages">345</span></p>
                     <span class="status">
                         <p>Mark as read:</p>
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" name="" id="" class="status_checkbox">
                     </span><button class="remove_btn btn">Remove</button></div>
                 <div class="card">
                     <h2 class="name">Book Name</h2>
                     <p class="author">Author</p>
-                    <p>pages: <span class="pages">345</span></p>
+                    <p>Pages: <span class="pages">345</span></p>
                     <span class="status">
                         <p>Mark as read:</p>
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" name="" id="" class="status_checkbox">
                     </span><button class="remove_btn btn">Remove</button></div>
             </main>
+        </div>
+        <div id="overlay" class="hidden visually-hidden">
+            <form action="post" id="pop-up-form">
+                <h2>Add new book</h2>
+                <label for="new-title">Title:</label>
+                <input id="new-title" type="text">
+                <label for="new-author">Author</label>
+                <input id="new-author" type="text">
+                <div class="new-pages-status">
+                    <label for="new-pages">Pages:</label>
+                    <input type="number" id="new-pages" min="0">
+                </div>
+                <label for="new-status_checkbox">I have read this book!</label>
+                <input type="checkbox" id="new-status_checkbox">
+                <button class="btn add_new-book_btn" type="submit">Add to library</button>
+            </form>
         </div>
 </body>
 </html>
 
-<!-- (.card>(h2.name{Book Name}+p.author{Author}+(p{pages: }>span.pages{345})+(span.status>p{Mark as read:}+input:checkbox)+btn.remove_btn.btn{Remove}))->
+<!-- (.card>(h2.name{Book Name}+p.author{Author}+(p{Pages: }>span.pages{345})+(span.status>p{Mark as read:}+input:checkbox.status_checkbox)+btn.remove_btn.btn{Remove}))->

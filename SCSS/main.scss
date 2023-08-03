@@ -10,7 +10,7 @@ html {
 body {
   background-color: $bg-main;
   font-family: "Roboto", sans-serif;
-  color: #3a3737;
+  color: $main-color;
 }
 
 ul,
@@ -41,11 +41,11 @@ a {
   cursor: pointer;
   border: none;
   border-radius: 3px;
-  box-shadow: 1px 0px 1px #473232, 0px 1px 1px #473232, 2px 1px 1px #473232,
-    1px 2px 1px #473232, 3px 2px 1px #473232, 2px 3px 1px #473232;
+  box-shadow: 1px 0px 1px $border, 0px 1px 1px $border, 2px 1px 1px $border,
+    1px 2px 1px $border, 3px 2px 1px $border, 2px 3px 1px $border;
   &:active {
     border: none;
-    box-shadow: 1px 0px 1px #473232, 0px 1px 1px #473232, 2px 1px 1px #473232;
+    box-shadow: 1px 0px 1px $border, 0px 1px 1px $border, 2px 1px 1px $border;
     transform: translate(1px, 1px);
   }
 }
@@ -82,15 +82,12 @@ a {
   flex-direction: column;
   gap: 5px;
   border-radius: 5px;
-  border-bottom: #473232 solid;
-  border-right: #473232 solid;
+  border-bottom: $border solid;
+  border-right: $border solid;
   .name {
     margin: 0;
   }
-  .author {
-  }
-  .pages {
-  }
+
   .status {
     display: flex;
     gap: 5px;
@@ -102,4 +99,57 @@ a {
     right: -10px;
     background-color: $main-theme;
   }
+}
+
+// POPUPFORM /////////////////////////////////////////////////////
+#overlay.visually-hidden {
+  opacity: 0;
+}
+#overlay.hidden {
+  display: none;
+}
+
+#overlay {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: opacify($color: transparent, $amount: 0.4);
+
+  transition: all 0.5s;
+}
+
+#pop-up-form {
+  color: $main-color;
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  margin-left: 0;
+  width: clamp(85%, 30%, fit-content);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  background-color: $main-theme;
+  border: 3px solid $border;
+  input {
+    padding: 3px 5px;
+    margin-bottom: 15px;
+  }
+}
+.new-pages-status {
+  display: flex;
+  gap: 5px;
+  align-items: baseline;
+}
+#new-pages {
+  width: 8ch;
+  text-align: right;
+}
+.add_new-book_btn {
+  background-color: $bg-main;
 }
