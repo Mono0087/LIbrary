@@ -35,6 +35,10 @@ a {
   }
 }
 
+h2{
+  margin: 0;
+}
+
 .btn {
   padding: 5px 10px;
   transition: all 0.1s;
@@ -59,9 +63,12 @@ a {
   margin: 0 auto;
   position: relative;
   top: 50px;
+  min-height: 80vh;
 }
 .controls {
   text-align: right;
+  border-bottom: 2px dotted $border;
+  margin-bottom: 15px;
   .add_btn {
     margin-bottom: 15px;
     text-align: right;
@@ -72,7 +79,7 @@ a {
 .bookcards_container {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 15px;
 }
 .card {
@@ -84,9 +91,6 @@ a {
   border-radius: 5px;
   border-bottom: $border solid;
   border-right: $border solid;
-  .name {
-    margin: 0;
-  }
 
   .status {
     display: flex;
@@ -99,6 +103,10 @@ a {
     right: -10px;
     background-color: $main-theme;
   }
+}
+
+[data-book-id*="0"] {
+  display: none;
 }
 
 // POPUPFORM /////////////////////////////////////////////////////

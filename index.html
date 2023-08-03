@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,72 +10,45 @@
     <script src="./main.js" defer></script>
     <title>Library</title>
 </head>
+
 <body>
-        <div class="container">
-            <h1>Library</h1>
-            <div class="controls">
-                <button class="add_btn btn">+Add</button>
+    <div class="container">
+        <h1>Library</h1>
+        <div class="controls">
+            <button class="add_btn btn">+Add</button>
+        </div>
+        <main class="bookcards_container">
+            <!-- Example for cloning -->
+            <div class="card" data-book-id="0">
+                <h2 class="name">Book Name</h2>
+                <p class="author">Author</p>
+                <p>Pages: <span class="pages">345</span></p>
+                <span class="status">
+                    <p>Mark as read:</p>
+                    <input type="checkbox" name="" id="" class="status_checkbox">
+                </span><button class="remove_btn btn">Remove</button>
             </div>
-            <main class="bookcards_container">
-                <div class="card">
-                    <h2 class="name">Book Name</h2>
-                    <p class="author">Author</p>
-                    <p>Pages: <span class="pages">345</span></p>
-                    <span class="status">
-                        <p>Mark as read:</p>
-                        <input type="checkbox" name="" id="" class="status_checkbox">
-                    </span><button class="remove_btn btn">Remove</button></div>
-                <div class="card">
-                    <h2 class="name">Book Name</h2>
-                    <p class="author">Author</p>
-                    <p>Pages: <span class="pages">345</span></p>
-                    <span class="status">
-                        <p>Mark as read:</p>
-                        <input type="checkbox" name="" id="" class="status_checkbox">
-                    </span><button class="remove_btn btn">Remove</button></div>
-                <div class="card">
-                    <h2 class="name">Book Name</h2>
-                    <p class="author">Author</p>
-                    <p>Pages: <span class="pages">345</span></p>
-                    <span class="status">
-                        <p>Mark as read:</p>
-                        <input type="checkbox" name="" id="" class="status_checkbox">
-                    </span><button class="remove_btn btn">Remove</button></div>
-                <div class="card">
-                    <h2 class="name">Book Name</h2>
-                    <p class="author">Author</p>
-                    <p>Pages: <span class="pages">345</span></p>
-                    <span class="status">
-                        <p>Mark as read:</p>
-                        <input type="checkbox" name="" id="" class="status_checkbox">
-                    </span><button class="remove_btn btn">Remove</button></div>
-                <div class="card">
-                    <h2 class="name">Book Name</h2>
-                    <p class="author">Author</p>
-                    <p>Pages: <span class="pages">345</span></p>
-                    <span class="status">
-                        <p>Mark as read:</p>
-                        <input type="checkbox" name="" id="" class="status_checkbox">
-                    </span><button class="remove_btn btn">Remove</button></div>
-            </main>
-        </div>
-        <div id="overlay" class="hidden visually-hidden">
-            <form action="post" id="pop-up-form">
-                <h2>Add new book</h2>
-                <label for="new-title">Title:</label>
-                <input id="new-title" type="text">
-                <label for="new-author">Author</label>
-                <input id="new-author" type="text">
-                <div class="new-pages-status">
-                    <label for="new-pages">Pages:</label>
-                    <input type="number" id="new-pages" min="0">
-                </div>
-                <label for="new-status_checkbox">I have read this book!</label>
-                <input type="checkbox" id="new-status_checkbox">
-                <button class="btn add_new-book_btn" type="submit">Add to library</button>
-            </form>
-        </div>
+            <!-- Example for cloning -->
+        </main>
+    </div>
+    <div id="overlay" class="hidden visually-hidden">
+        <form action="post" id="pop-up-form">
+            <h2>Add new book</h2>
+            <label for="new-title">Title:</label>
+            <input id="new-title" type="text" value="name1">
+            <label for="new-author">Author</label>
+            <input id="new-author" type="text" value="author1">
+            <div class="new-pages-status">
+                <label for="new-pages">Pages:</label>
+                <input type="number" id="new-pages" min="0" value="3">
+            </div>
+            <label for="new-status_checkbox">I have read this book!</label>
+            <input type="checkbox" id="new-status_checkbox">
+            <button class="btn add_new-book_btn" type="submit">Add to library</button>
+        </form>
+    </div>
 </body>
+
 </html>
 
 <!-- (.card>(h2.name{Book Name}+p.author{Author}+(p{Pages: }>span.pages{345})+(span.status>p{Mark as read:}+input:checkbox.status_checkbox)+btn.remove_btn.btn{Remove}))->
