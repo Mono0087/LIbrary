@@ -14,15 +14,24 @@ function Book(name, author, pages, readStatus) {
         this.readStatus = readStatus
 }
 
-function appendBooksContainer(book) {
-    let cardExample = document.querySelector('.card');
-    let cardEl = cardExample.cloneNode(true);
-    cardEl.dataset.bookId = bookShelf.length;
-    cardEl.children[0].textContent = book.name;
-    cardEl.children[1].textContent = book.author;
-    cardEl.children[2].children[0].textContent = book.pages
-    cardEl.children[3].children[1].checked = book.readStatus;
-    booksContainer.prepend(cardEl)
+function reloadBooksContainer() {
+    booksContainer.innerHTML = ''
+}
+
+function appendBooksContainer(books) {
+    reloadBooksContainer()
+    let count = 0;
+    books.forEach(book => {
+        let cardExample = document.querySelector('.card');
+        let cardEl = cardExample.cloneNode(true);
+        cardEl.dataset.bookId = count;
+        cardEl.children[0].textContent = book.name;
+        cardEl.children[1].textContent = book.author;
+        cardEl.children[2].children[0].textContent = book.pages
+        cardEl.children[3].children[1].checked = book.readStatus;
+        booksContainer.prepend(cardEl)
+        count++;
+    });
 }
 
 addBtn.addEventListener('click', (e) => {
@@ -44,6 +53,21 @@ function hideForm() {
     });
 }
 
+document.body.addEventListener('click', (Event) => {
+    if (Event.target.classList.contains('card')){
+        console.log(Event.target.dataset.bookId)
+    }
+    console.log(bookShelf)
+})
+
+booksContainer.addEventListener('click', (Event) => {
+    if (Event.target.classList.contains('remove_btn')) {
+        bookShelf.splice(+Event.target.parentElement.dataset.bookId, 1);
+        Event.target.parentElement.remove();
+        appendBooksContainer(bookShelf)
+}
+})
+
 function clearFormInputs() {
     for (let i = 0; i < 3; ++i) {
         inputs[i].value = '';
@@ -62,8 +86,7 @@ popUpForm.addEventListener('click', (e) => {
             bookShelf.push(book);
             clearFormInputs();
             hideForm();
-            appendBooksContainer(book);
-            console.log(bookShelf)
+            appendBooksContainer(bookShelf);
         } else {
             alert('Please enter all fields!')
         }

@@ -120,7 +120,7 @@ h2 {
   background-color: #b96060;
 }
 
-[data-book-id*="0"] {
+[data-book-id*="-1"] {
   display: none;
 }
 
