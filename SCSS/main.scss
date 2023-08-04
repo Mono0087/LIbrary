@@ -52,6 +52,10 @@ h2{
     box-shadow: 1px 0px 1px $border, 0px 1px 1px $border, 2px 1px 1px $border;
     transform: translate(1px, 1px);
   }
+  &:hover{
+    opacity: 1;
+    color: lighten($color: $main-color, $amount: 10);
+  }
 }
 
 // CONTAINER ///////////////////////////////////////
@@ -64,6 +68,9 @@ h2{
   position: relative;
   top: 50px;
   min-height: 80vh;
+  h1{
+    text-align: center;
+  }
 }
 .controls {
   text-align: right;
@@ -81,16 +88,25 @@ h2{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 15px;
+  grid-auto-rows: min-content;
 }
 .card {
   background-color: $bg-main;
-  padding: 15px;
+  padding: 15px 15px 45px 15px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
   border-radius: 5px;
   border-bottom: $border solid;
   border-right: $border solid;
+  position: relative;
+
+  .name, .author{
+    text-overflow: ellipsis;
+    white-space: normal;
+    overflow: hidden;
+    word-wrap: break-word;
+  }
 
   .status {
     display: flex;
@@ -98,9 +114,9 @@ h2{
   }
   .remove_btn {
     align-self: end;
-    position: relative;
-    bottom: -10px;
-    right: -10px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
     background-color: $main-theme;
   }
 }
@@ -143,7 +159,8 @@ h2{
   align-items: center;
   z-index: 1;
   background-color: $main-theme;
-  border: 3px solid $border;
+  box-shadow: 1px 0px 1px $border, 0px 1px 1px $border, 2px 1px 1px $border,
+    1px 2px 1px $border, 3px 2px 1px $border, 2px 3px 1px $border;
   input {
     padding: 3px 5px;
     margin-bottom: 15px;

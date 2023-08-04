@@ -50,16 +50,20 @@ h2 {
   cursor: pointer;
   border: none;
   border-radius: 3px;
-  -webkit-box-shadow: 1px 0px 1px #473232, 0px 1px 1px #473232, 2px 1px 1px #473232, 1px 2px 1px #473232, 3px 2px 1px #473232, 2px 3px 1px #473232;
-          box-shadow: 1px 0px 1px #473232, 0px 1px 1px #473232, 2px 1px 1px #473232, 1px 2px 1px #473232, 3px 2px 1px #473232, 2px 3px 1px #473232;
+  -webkit-box-shadow: 1px 0px 1px #494040, 0px 1px 1px #494040, 2px 1px 1px #494040, 1px 2px 1px #494040, 3px 2px 1px #494040, 2px 3px 1px #494040;
+          box-shadow: 1px 0px 1px #494040, 0px 1px 1px #494040, 2px 1px 1px #494040, 1px 2px 1px #494040, 3px 2px 1px #494040, 2px 3px 1px #494040;
 }
 .btn:active {
   border: none;
-  -webkit-box-shadow: 1px 0px 1px #473232, 0px 1px 1px #473232, 2px 1px 1px #473232;
-          box-shadow: 1px 0px 1px #473232, 0px 1px 1px #473232, 2px 1px 1px #473232;
+  -webkit-box-shadow: 1px 0px 1px #494040, 0px 1px 1px #494040, 2px 1px 1px #494040;
+          box-shadow: 1px 0px 1px #494040, 0px 1px 1px #494040, 2px 1px 1px #494040;
   -webkit-transform: translate(1px, 1px);
       -ms-transform: translate(1px, 1px);
           transform: translate(1px, 1px);
+}
+.btn:hover {
+  opacity: 1;
+  color: #464242;
 }
 
 .container {
@@ -71,10 +75,13 @@ h2 {
   top: 50px;
   min-height: 80vh;
 }
+.container h1 {
+  text-align: center;
+}
 
 .controls {
   text-align: right;
-  border-bottom: 2px dotted #473232;
+  border-bottom: 2px dotted #494040;
   margin-bottom: 15px;
 }
 .controls .add_btn {
@@ -88,11 +95,13 @@ h2 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 15px;
+  grid-auto-rows: -webkit-min-content;
+  grid-auto-rows: min-content;
 }
 
 .card {
   background-color: #faebd7;
-  padding: 15px;
+  padding: 15px 15px 45px 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -100,10 +109,17 @@ h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 5px;
+  gap: 10px;
   border-radius: 5px;
-  border-bottom: #473232 solid;
-  border-right: #473232 solid;
+  border-bottom: #494040 solid;
+  border-right: #494040 solid;
+  position: relative;
+}
+.card .name, .card .author {
+  text-overflow: ellipsis;
+  white-space: normal;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 .card .status {
   display: -webkit-box;
@@ -114,9 +130,9 @@ h2 {
 .card .remove_btn {
   -ms-flex-item-align: end;
       align-self: end;
-  position: relative;
-  bottom: -10px;
-  right: -10px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
   background-color: #b96060;
 }
 
@@ -169,7 +185,8 @@ h2 {
           align-items: center;
   z-index: 1;
   background-color: #b96060;
-  border: 3px solid #473232;
+  -webkit-box-shadow: 1px 0px 1px #494040, 0px 1px 1px #494040, 2px 1px 1px #494040, 1px 2px 1px #494040, 3px 2px 1px #494040, 2px 3px 1px #494040;
+          box-shadow: 1px 0px 1px #494040, 0px 1px 1px #494040, 2px 1px 1px #494040, 1px 2px 1px #494040, 3px 2px 1px #494040, 2px 3px 1px #494040;
 }
 #pop-up-form input {
   padding: 3px 5px;
