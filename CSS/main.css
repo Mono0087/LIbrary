@@ -115,7 +115,8 @@ h2 {
   border-right: #494040 solid;
   position: relative;
 }
-.card .name, .card .author {
+.card .name,
+.card .author {
   text-overflow: ellipsis;
   white-space: normal;
   overflow: hidden;
@@ -136,7 +137,7 @@ h2 {
   background-color: #b96060;
 }
 
-[data-book-id*="-1"] {
+.card-template {
   display: none;
 }
 
