@@ -2,13 +2,18 @@ const Library = (function () {
     const books = [];
 
     // New objects creation
-    const _bookFactory = function (name, author, pages, read) {
-        function changeReadStatus() {
+    class Book {
+        constructor(name, author, pages, read) {
+            this.name = name;
+            this.author = author;
+            this.pages = pages;
+            this.read = read;
+        }
+        changeReadStatus() {
             if (this.read) {
                 this.read = false;
             } else this.read = true;
         }
-        return { name, author, pages, read, changeReadStatus }
     }
 
     // Cache DOM
@@ -55,12 +60,26 @@ const Library = (function () {
             passive: false
         });
     }
+    function _validateFormInput(inputs) {
+        let result = true;
+        inputs.forEach(input => {
+            if (input === '') {
+                result = false;
+            }
+        })
+        return result;
+    }
     function _handleForm(e) {
         if (e.target === addNewBookBtn) {
             let inputsData = [...popUpForm.querySelectorAll('input')].map((el) => {
                 if (el.type === 'checkbox') return el.checked;
                 return el.value;
             })
+            if (!_validateFormInput(inputsData)) {
+                alert('All fields must be filled up!');
+                e.preventDefault();
+                return;
+            }
             addBook(...inputsData);
             _hidePopUpForm();
             e.preventDefault();
@@ -84,7 +103,7 @@ const Library = (function () {
     // Public methods
     function addBook(name, author, pages, status) {
         if (arguments.length < 4) throw Error('Wrong input!')
-        books.push(_bookFactory(...arguments))
+        books.push(new Book(...arguments))
         _render();
         return books;
     }
@@ -93,5 +112,5 @@ const Library = (function () {
         _render();
         return books;
     }
-    return { addBook, deleteBook}
+    return { addBook, deleteBook }
 })()
