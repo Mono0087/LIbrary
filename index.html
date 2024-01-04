@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/normalize.css">
-    <link rel="stylesheet" href="./CSS/main.css">
+    <link rel="stylesheet" href="./CSS/main.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <script src="./main.js" defer></script>
     <title>Library</title>
@@ -28,24 +28,29 @@
                     <p>Pages: <span class="pages">345</span></p>
                     <span class="status">
                         <p>Mark as read:</p>
-                        <input type="checkbox" name="" id="" class="status_checkbox">
+                        <input type="checkbox" name="check_status" class="status_checkbox">
                     </span><button class="remove_btn btn">Remove</button>
                 </div>
             </div>
             <!-- Example for cloning -->
             <div id="overlay" class="hidden visually-hidden">
-                <form action="post" id="pop-up-form">
+                <form novalidate id="pop-up-form">
                     <h2>Add new book</h2>
-                    <label for="new-title">Title:</label>
-                    <input id="new-title" type="text" value="name1">
-                    <label for="new-author">Author</label>
-                    <input id="new-author" type="text" value="author1">
+                    <label for="new-title">Title:
+                        <input id="new-title" type="text" name="name" value="name1" required>
+                        <span class="error" data-error="name" aria-live></span>
+                    </label>
+                    <label for="new-author">Author
+                        <input id="new-author" type="text" name="author" value="author1" required>
+                        <span class="error" data-error="author" aria-live></span>
+                    </label>
                     <div class="new-pages-status">
                         <label for="new-pages">Pages:</label>
                         <input type="number" id="new-pages" min="0" value="3">
                     </div>
-                    <label for="new-status_checkbox">I have read this book!</label>
-                    <input type="checkbox" id="new-status_checkbox">
+                    <label for="new-status_checkbox">I have read this book!
+                        <input type="checkbox" id="new-status_checkbox">
+                    </label>
                     <button id="add_new-book_btn" class="btn" type="submit">Add to library</button>
                 </form>
             </div>

@@ -1,4 +1,4 @@
-@import "config";
+@import 'config';
 * {
   box-sizing: border-box;
 }
@@ -9,7 +9,7 @@ html {
 
 body {
   background-color: $bg-main;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: $main-color;
 }
 
@@ -162,9 +162,31 @@ h2 {
   background-color: $main-theme;
   box-shadow: 1px 0px 1px $border, 0px 1px 1px $border, 2px 1px 1px $border,
     1px 2px 1px $border, 3px 2px 1px $border, 2px 3px 1px $border;
-  input {
-    padding: 3px 5px;
+  label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
     margin-bottom: 15px;
+  }
+  input:invalid {
+    outline: 2px solid $main-theme;
+  }
+  input:focus:invalid {
+    outline: none;
+  }
+}
+.error {
+  display: block;
+  width: fit-content;
+  align-self: center;
+  padding: 0;
+  color: $main-theme;
+  background-color: $bg-main;
+  border-radius: 0 0 5px 5px;
+  font-size: clamp(1rem, 1.5vw, 1.8rem);
+  &.active {
+    padding: 5px;
   }
 }
 .new-pages-status {
